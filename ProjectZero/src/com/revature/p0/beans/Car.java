@@ -22,7 +22,7 @@ public class Car {
 	private int yearManufactured;
 	private String make;
 	private String model;
-	private String nameOfCar = yearManufactured + " " + make + " " + model;
+	//private String nameOfCar = yearManufactured + " " + make + " " + model;
 	private double askingPrice;
 	//private double amountPaidForCar;
 	private double amountStillOwed;
@@ -52,9 +52,9 @@ public class Car {
 	public void setModel(String model) {
 		this.model = model;
 	}
-	public String getNameOfCar() {
-		return nameOfCar;
-	}
+	//public String getNameOfCar() {
+		//return nameOfCar;
+	//}
 	public double getAskingPrice() {
 		return askingPrice;
 	}

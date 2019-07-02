@@ -10,6 +10,7 @@ public class Employee extends User {
 	public Employee(String firstName, String lastName, String userName, String password) {
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.userName = userName;
 		this.loginInfo.put(userName, password);
 	}
 	

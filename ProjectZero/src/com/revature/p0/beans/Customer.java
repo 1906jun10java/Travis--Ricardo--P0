@@ -10,6 +10,7 @@ public class Customer extends User {
 	public Customer(String firstName, String lastName, String userName, String password) {
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.userName = userName;
 		this.loginInfo.put(userName, password);
 		//this.fullName = firstName + " " + lastName;
 	}

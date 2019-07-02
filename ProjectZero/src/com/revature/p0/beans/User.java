@@ -14,6 +14,7 @@ public abstract class User {
 	public User(String firstName, String lastName, String userName, String password) {
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.userName = userName;
 		this.loginInfo.put(userName, password);
 		//this.fullName = firstName + " " + lastName;
 	}
@@ -22,6 +23,7 @@ public abstract class User {
 			
 	protected String firstName;
 	protected String lastName;
+	protected String userName;
 	protected Map<String, String> loginInfo = new HashMap<String, String>();
 	
 	//public String fullName = this.firstName + " " + getLastName();
@@ -45,6 +47,12 @@ public abstract class User {
 	}
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 	//public String getFullName() {
 		//return fullName;

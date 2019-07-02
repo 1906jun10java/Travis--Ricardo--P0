@@ -8,15 +8,46 @@ import com.revature.p0.services.*;
 public class Driver {
 
 	public static void main(String[] args) {
-		///* Hardcoding trial and error
+		
+		//MenuOptionServices.
+		
+		//Hardcoding trial and error
 		
 		// Create dealership
 		
 		Dealership travisAndRicardosAwesomeCars = new Dealership();
 		
+		// Create dealership computer system
+		
+		DealershipComputerSystem dealerCompSystem = new DealershipComputerSystem();
+		
 		// Create employee
 		
-		User employeeBob = new Employee("Bob", "Smith", "bobsmith2000", "boblovescars");
+		Employee employeeBob = new Employee("Bob", "Smith", "bobsmith2000", "boblovescars");
+		
+		// Have employee register as an employee
+		
+		UserServices.employeeRegister(employeeBob, dealerCompSystem);
+		
+		System.out.println("Listing all employee accounts: ");
+		for (String employeeAccountUserName : dealerCompSystem.employeeAccounts.keySet()) {
+			System.out.println(employeeAccountUserName + " : " + dealerCompSystem.employeeAccounts.get(employeeAccountUserName));
+			System.out.println();
+		}
+		
+		// Have employee try to login as an employee
+		
+		System.out.println("Was Bob able to successfully register and login as an employee?");
+		System.out.println(UserServices.employeeLogin("bobsmith2000", "boblovescars", dealerCompSystem));
+		System.out.println();
+		
+		System.out.println("Was Bob able to successfully login as an employee with the wrong password?");
+		System.out.println(UserServices.employeeLogin("bobsmith2000", "bobhatescars", dealerCompSystem));
+		System.out.println();
+		
+		System.out.println("Was Bob able to successfully login as a customer?");
+		System.out.println(UserServices.customerLogin("bobsmith2000", "boblovescars", dealerCompSystem));
+		System.out.println();
 		
 		// Create 3 customers
 		
@@ -24,7 +55,39 @@ public class Driver {
 		Customer customerMike = new Customer("Mike", "Williams", "supercoolmike", "mikeissupercool");
 		Customer customerSarah = new Customer("Sarah", "Parker", "spiderwoman3000", "S91d3rw0m@n");
 		
-		// 
+		// Have customers register as customers
+		
+		UserServices.customerRegister(customerDavid, dealerCompSystem);
+		UserServices.customerRegister(customerMike, dealerCompSystem);
+		UserServices.customerRegister(customerSarah, dealerCompSystem);
+		
+		System.out.println("Listing all customer accounts: ");
+		for (String customerAccountUserName : dealerCompSystem.customerAccounts.keySet()) {
+			System.out.println(customerAccountUserName + " : " + dealerCompSystem.customerAccounts.get(customerAccountUserName));
+			System.out.println();
+		}
+		
+		// Have customers try to login as a customer
+		
+		System.out.println("Was David able to successfully register and login as a customer?");
+		System.out.println(UserServices.customerLogin("dj25498", "239thvs98hf9", dealerCompSystem));
+		System.out.println();
+		
+		System.out.println("Was Mike able to successfully register and login as a customer?");
+		System.out.println(UserServices.customerLogin("supercoolmike", "mikeissupercool", dealerCompSystem));
+		System.out.println();
+		
+		System.out.println("Was Sarah able to successfully register and login as a customer?");
+		System.out.println(UserServices.customerLogin("spiderwoman3000", "S91d3rw0m@n", dealerCompSystem));
+		System.out.println();
+		
+		System.out.println("Was Sarah able to successfully login as a customer with wrong password?");
+		System.out.println(UserServices.customerLogin("spiderwoman3000", "spiderwoman", dealerCompSystem));
+		System.out.println();
+		
+		System.out.println("Was Sarah able to successfully login as an employee?");
+		System.out.println(UserServices.employeeLogin("spiderwoman3000", "S91d3rw0m@n", dealerCompSystem));
+		System.out.println();
 		
 		// Create 5 cars and add them to the lot
 		
@@ -206,6 +269,6 @@ public class Driver {
 		
 		EmployeeServices.viewAllPayments(travisAndRicardosAwesomeCars);
 		
-		// */
+		//*/
 	}
 }
