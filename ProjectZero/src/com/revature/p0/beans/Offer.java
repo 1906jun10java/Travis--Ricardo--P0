@@ -41,11 +41,21 @@ public class Offer {
 	
 	@Override
 	public String toString() {
+		return customerMakingOffer.getFirstName() + " " + customerMakingOffer.getLastName() + 
+				" : offer of $" + amountWillingToPay + " for the " +
+				carDesired.getYearManufactured() + " " + carDesired.getMake()  + " "
+				+ carDesired.getModel();
+	}	
+	
+	/*
+	 * @Override
+	public String toString() {
 		return "Offer [carDesired=" + carDesired.getYearManufactured() + " " + carDesired.getMake()  + " "
 				+ carDesired.getModel()
 				+ ", amountWillingToPay=" + amountWillingToPay
 				+ ", customerMakingOffer=" + customerMakingOffer.getFirstName() + " " + customerMakingOffer.getLastName()
 				+ "]";
 	}	
+	 */
 	
 }

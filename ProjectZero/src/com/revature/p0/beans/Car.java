@@ -22,9 +22,7 @@ public class Car {
 	private int yearManufactured;
 	private String make;
 	private String model;
-	//private String nameOfCar = yearManufactured + " " + make + " " + model;
 	private double askingPrice;
-	//private double amountPaidForCar;
 	private double amountStillOwed;
 	private double monthlyPayment;
 	private User owner;
@@ -52,9 +50,6 @@ public class Car {
 	public void setModel(String model) {
 		this.model = model;
 	}
-	//public String getNameOfCar() {
-		//return nameOfCar;
-	//}
 	public double getAskingPrice() {
 		return askingPrice;
 	}
@@ -90,10 +85,17 @@ public class Car {
 	
 	@Override
 	public String toString() {
+		return yearManufactured + " " + make + " " + model;
+	}
+	
+	/*
+	@Override
+	public String toString() {
 		return "Car [yearManufactured=" + yearManufactured + ", make=" + make + ", model=" + model + ", askingPrice="
 				+ askingPrice + ", amountStillOwed=" + amountStillOwed + ", owner=" + owner + ", offersMadeForCar="
 				+ offersMadeForCar + "]";
 	}
+	*/
 	
 	
 }

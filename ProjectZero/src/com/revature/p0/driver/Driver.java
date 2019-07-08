@@ -9,9 +9,13 @@ public class Driver {
 
 	public static void main(String[] args) {
 		
-		//MenuOptionServices.
+		MenuOptionsServices menu = new MenuOptionsServices();
+		
+		menu.welcomeMenu();
 		
 		//Hardcoding trial and error
+		
+		/*
 		
 		// Create dealership
 		
@@ -149,28 +153,14 @@ public class Driver {
 		
 		// Print out the offers made for each car
 		
-		System.out.println("Offers made for Porsche: ");
-		for(Offer offer : porsche911.offersMadeForCar) {
-			System.out.println(offer);
-		}
-		System.out.println();
+		EmployeeServices.viewOffers(porsche911);
 		
-		System.out.println("Offers made for Kia: ");
-		for(Offer offer : kiaSoul.offersMadeForCar) {
-			System.out.println(offer);
-		}
-		System.out.println();
+		EmployeeServices.viewOffers(kiaSoul);
 		
-		System.out.println("Offers made for Tesla: ");
-		for(Offer offer : teslaModelX.offersMadeForCar) {
-			System.out.println(offer);
-		}
-		System.out.println();
+		EmployeeServices.viewOffers(teslaModelX);
 		
-		System.out.println("Offers made for Ford: ");
-		for(Offer offer : fordF350.offersMadeForCar) {
-			System.out.println(offer);
-		}
+		EmployeeServices.viewOffers(fordF350);
+		
 		System.out.println();
 		
 		// Have employee accept an offer
@@ -269,6 +259,6 @@ public class Driver {
 		
 		EmployeeServices.viewAllPayments(travisAndRicardosAwesomeCars);
 		
-		//*/
+		*/
 	}
 }

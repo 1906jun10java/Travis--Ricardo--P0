@@ -16,7 +16,9 @@ public class CustomerServices {
 		System.out.println();
 		
 		for(Car car : dealership.carsOnLot) {
-			System.out.println(car);
+			System.out.println(dealership.carsOnLot.indexOf(car) + 1 + 
+					". " + car.getYearManufactured() + " " + car.getMake() + 
+					" " + car.getModel() + " : $" + car.getAskingPrice());
 		}
 		System.out.println();
 	}
@@ -28,6 +30,10 @@ public class CustomerServices {
 		Offer offer = new Offer(customer, car, amount);
 		customer.offersMade.add(offer);
 		car.offersMadeForCar.add(offer);
+		
+		System.out.println("You just made this offer: ");
+		System.out.println(offer);
+		System.out.println();
 	}
 	
 	public static void viewOwnedCars(Customer customer) {

@@ -82,7 +82,7 @@ public abstract class User {
 	// toString
 	@Override
 	public String toString() {
-		return "User [firstName=" + firstName + ", lastName=" + lastName + "]";
+		return firstName + " " + lastName;
 	}
 	
 	/*

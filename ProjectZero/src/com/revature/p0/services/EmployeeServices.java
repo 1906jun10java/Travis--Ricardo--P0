@@ -9,6 +9,31 @@ public class EmployeeServices {
 	// Instance Variables
 			
 	// Methods
+	
+	public static void viewCarsOnLot(Dealership dealership) {
+		
+		System.out.println("Viewing all the cars on the lot: ");
+		System.out.println();
+		
+		for(Car car : dealership.carsOnLot) {
+			System.out.println(dealership.carsOnLot.indexOf(car) + 1 + 
+					". " + car.getYearManufactured() + " " + car.getMake() + 
+					" " + car.getModel() + " : $" + car.getAskingPrice());
+		}
+		System.out.println();
+	}
+	
+	public static void viewOffers(Car car) {
+
+		System.out.println("Viewing all the offers for the " + car + ": ");
+		System.out.println();
+		
+		for(Offer offer : car.offersMadeForCar) {
+			System.out.println(car.offersMadeForCar.indexOf(offer) + 1 + 
+					". " + offer);
+		}
+		System.out.println();
+	}
 			
 	public static void addCarToLot(Car car, Dealership dealership) {
 		
@@ -19,7 +44,8 @@ public class EmployeeServices {
 		// Add car to dealership.carsOnLot
 		
 		dealership.carsOnLot.add(car);
-		System.out.println("This car was added to the lot: " + car);
+		System.out.println("This car was added to the lot: " + car.getYearManufactured() + " " 
+				+ car.getMake() + " " + car.getModel() + " : $" + car.getAskingPrice());
 		System.out.println();
 	}
 	
@@ -30,9 +56,12 @@ public class EmployeeServices {
 		 * Prints a message to screen if not found
 		 */
 		
+		//Car car = dealership.carsOnLot.get(index);
+		
 		if(dealership.carsOnLot.contains(car)) {
 			dealership.carsOnLot.remove(car);
-			System.out.println("This car was removed from the lot: " + car);
+			System.out.println("This car was removed from the lot: " + car.getYearManufactured() + " " 
+					+ car.getMake() + " " + car.getModel());
 			System.out.println();
 		}
 		else {
@@ -43,6 +72,9 @@ public class EmployeeServices {
 	}
 	
 	public static void acceptOffer(Offer offer, Dealership dealership) {
+		
+		System.out.println("This offer has been accepted : " + offer);
+		System.out.println();
 		
 		// Employee takes the car off the lot
 		
